@@ -32,4 +32,3 @@ def comparison_table(rows: list[dict[str, object]]) -> pd.DataFrame:
         metric_columns = [column for column in frame if column != "model"]
         frame[metric_columns] = frame[metric_columns].round(4)
     return frame
-

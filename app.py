@@ -623,7 +623,7 @@ def render_about() -> None:
     st.title("About the Capstone")
     st.markdown(
         """
-        **Project:** AI-Driven Multi-Agent Predictive Healthcare and Health Risk Scoring System  
+        **Project:** AI-Driven Multi-Agent Predictive Healthcare and Health Risk Scoring System
         **Purpose:** demonstrate modular data analysis, supervised learning workflows, interpretable model outputs, and a Streamlit dashboard.
 
         ### Current data limitations
@@ -634,7 +634,7 @@ def render_about() -> None:
         - Disease prediction, regional rates, outbreak detection, assessment-history storage, and external LLM services are not implemented.
 
         ### Local agent architecture
-        Patient Analysis → Risk Prediction → Explanation → Biomarker Analysis → Report/Summary.  
+        Patient Analysis → Risk Prediction → Explanation → Biomarker Analysis → Report/Summary.
         A separate Regional Trend Agent aggregates uploaded historical data. Agents are local Python modules; no patient data is sent to an external AI API.
 
         ### Safety and privacy

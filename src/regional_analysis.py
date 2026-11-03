@@ -50,4 +50,3 @@ def regional_summary(counts: pd.DataFrame, region_column: str) -> str:
         return "No regional records are available for this selection."
     totals = counts.groupby(region_column)["records"].sum().sort_values(ascending=False)
     return f"{len(totals)} regions appear in the selected historical dataset. Highest record count: {totals.index[0]} ({int(totals.iloc[0])} rows). Counts describe the supplied data only; they do not establish population rates or detect outbreaks."
-

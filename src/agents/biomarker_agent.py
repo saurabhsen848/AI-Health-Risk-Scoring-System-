@@ -13,4 +13,3 @@ class BiomarkerAnalysisAgent:
             return {"available": False, "summary": pd.DataFrame(), "patient_values": pd.DataFrame()}
         values = patient_biomarker_summary(frame, row_position) if row_position is not None else pd.DataFrame()
         return {"available": True, "summary": biomarker_summary(frame), "patient_values": values}
-

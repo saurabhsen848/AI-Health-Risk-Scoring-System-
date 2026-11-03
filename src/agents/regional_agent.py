@@ -11,4 +11,3 @@ class RegionalTrendAgent:
     def analyze(self, frame: pd.DataFrame, region_column: str, **kwargs) -> dict:
         counts, ranked = aggregate_regional_trends(frame, region_column, **kwargs)
         return {"counts": counts, "ranked": ranked, "summary": regional_summary(counts, region_column)}
-

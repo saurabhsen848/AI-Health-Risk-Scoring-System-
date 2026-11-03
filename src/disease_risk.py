@@ -32,4 +32,3 @@ def disease_label_inventory(datasets: dict[str, pd.DataFrame]) -> pd.DataFrame:
                     }
                 )
     return pd.DataFrame(rows, columns=["source", "condition_label", "condition", "labeled_rows", "distinct_values", "model_available"])
-

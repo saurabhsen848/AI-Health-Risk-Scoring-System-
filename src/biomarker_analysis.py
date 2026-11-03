@@ -67,4 +67,3 @@ def compare_reference_ranges(values: dict[str, object], ranges: dict[str, tuple[
         status = "Below supplied range" if numeric < lower else "Above supplied range" if numeric > upper else "Within supplied range"
         rows.append({"biomarker": biomarker, "value": numeric, "lower": lower, "upper": upper, "status": status})
     return pd.DataFrame(rows)
-

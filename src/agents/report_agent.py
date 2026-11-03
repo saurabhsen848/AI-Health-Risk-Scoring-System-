@@ -9,4 +9,3 @@ class ReportSummaryAgent:
     def create(self, patient_features, risk_result, explanations, biomarker_values=None) -> dict:
         summary = build_patient_summary(patient_features, risk_result, explanations, biomarker_values)
         return {"summary": summary, "markdown": summary_markdown(summary)}
-

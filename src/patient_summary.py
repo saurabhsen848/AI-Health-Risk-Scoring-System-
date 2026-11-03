@@ -38,4 +38,3 @@ def summary_markdown(summary: dict[str, Any]) -> str:
         lines.extend([f"- {item}" for item in summary["potential_contributors"]])
     lines.extend(["", f"_{summary.get('interpretation', '')}_"])
     return "\n".join(lines)
-

@@ -8,4 +8,3 @@ class RiskPredictionAgent:
 
     def predict(self, artifact: dict, patient_features: dict) -> dict:
         return predict_health_risk(artifact, patient_features)
-

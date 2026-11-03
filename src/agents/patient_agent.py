@@ -13,4 +13,3 @@ class PatientAnalysisAgent:
         if missing:
             raise ValueError(f"Patient assessment is missing: {', '.join(missing)}")
         return {"feature_values": {name: features[name] for name in HEALTH_FEATURES}, "complete": True}
-
