@@ -1,0 +1,65 @@
+{
+  "source": "U.S. CDC/NCHS National Health and Nutrition Examination Survey",
+  "cycle": "NHANES August 2021-August 2023",
+  "source_base_url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles",
+  "files": {
+    "DEMO_L": "DEMO_L.xpt",
+    "BMX_L": "BMX_L.xpt",
+    "BPXO_L": "BPXO_L.xpt",
+    "GLU_L": "GLU_L.xpt",
+    "SMQ_L": "SMQ_L.xpt",
+    "PAQ_L": "PAQ_L.xpt",
+    "BPQ_L": "BPQ_L.xpt"
+  },
+  "merge_key": "SEQN",
+  "cohort": "Age 18 years and older; positive fasting subsample weight required.",
+  "target": {
+    "source": "BPQ_L.BPQ020",
+    "meaning": "Reported ever told by a doctor/health professional that respondent had hypertension",
+    "positive_raw_code": 1,
+    "negative_raw_code": 2,
+    "excluded_raw_codes": [
+      7,
+      9,
+      "missing"
+    ],
+    "processed_name": "hypertension_history",
+    "positive_processed_value": 1,
+    "negative_processed_value": 0
+  },
+  "features": {
+    "age": "DEMO_L.RIDAGEYR",
+    "bmi": "BMX_L.BMXBMI",
+    "systolic_bp": [
+      "BPXO_L.BPXOSY1",
+      "BPXO_L.BPXOSY2",
+      "BPXO_L.BPXOSY3"
+    ],
+    "fasting_glucose": "GLU_L.LBXGLU",
+    "current_smoker": [
+      "SMQ_L.SMQ020",
+      "SMQ_L.SMQ040"
+    ],
+    "physical_activity_sessions_per_week": [
+      "PAQ_L.PAD790Q",
+      "PAQ_L.PAD790U",
+      "PAQ_L.PAD810Q",
+      "PAQ_L.PAD810U"
+    ]
+  },
+  "missing_values": "No imputation in development dataset; remove rows missing any required feature, target, survey design field, or positive WTSAF2YR. Report source missingness before filtering.",
+  "invalid_values": {
+    "age": "Require age 18 through 80; NHANES public file top-codes age at 80.",
+    "bmi": "Require finite BMI > 0; preserve valid extremes and report IQR outliers rather than deleting statistical outliers.",
+    "systolic_bp": "Use mean of available readings that are >0 and <=300 mmHg; NHANES capture rule says SBP cannot exceed 300.",
+    "fasting_glucose": "Require finite fasting glucose >0 and positive WTSAF2YR.",
+    "target": "Only raw codes 1 and 2 are labeled; 7/9/missing excluded."
+  },
+  "survey_design": {
+    "weight": "GLU_L.WTSAF2YR",
+    "stratum": "DEMO_L.SDMVSTRA",
+    "psu": "DEMO_L.SDMVPSU"
+  },
+  "model_training": "Not performed. No classifier or prediction model is fit by this workflow.",
+  "interpretation": "BPQ020 is reported ever-diagnosed hypertension history, not future hypertension prediction, not medical diagnosis, and not clinically validated."
+}

@@ -1,0 +1,44 @@
+# Python environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# IDE
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local databases and patient records
+*.db
+*.sqlite
+*.sqlite3
+*.db-*
+*.sqlite-*
+*.sqlite3-*
+*.wal
+*.shm
+
+# Local datasets and derived analysis outputs (may contain individual-level health data)
+/data/
+/reports/
+
+# Unexpected local training script; do not publish or run as part of the project
+/.python
+
+# Temporary files
+*.log
+*.tmp
